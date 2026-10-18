@@ -7,6 +7,8 @@ returns SVG text.
 
 from __future__ import annotations
 
+import hashlib
+import re
 from html import escape
 from pathlib import Path
 
@@ -134,3 +136,21 @@ def write(name: str, theme: str, content: str) -> Path:
     path = ASSETS / f"{name}-{theme}.svg"
     path.write_text(content, encoding="utf-8")
     return path
+
+
+def stamp_readme() -> None:
+    """Put a short hash of each SVG on its README URL. jsDelivr tells browsers
+    to cache images for a week, so an image only refreshes when its URL
+    changes. Hashing the content changes the URL exactly when the card does."""
+    readme = ROOT / "README.md"
+
+    def stamp(m: re.Match) -> str:
+        path = ASSETS / m.group(2)
+        if not path.exists():
+            return m.group(0)
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()[:10]
+        return f"{m.group(1)}{m.group(2)}?v={digest}"
+
+    content = readme.read_text(encoding="utf-8")
+    content = re.sub(r"(@main/assets/)([\w-]+\.svg)(\?v=\w+)?", stamp, content)
+    readme.write_text(content, encoding="utf-8")

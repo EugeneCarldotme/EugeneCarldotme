@@ -15,9 +15,9 @@ import re
 import sys
 import urllib.request
 from collections import OrderedDict
-from datetime import date, datetime, timezone
+from datetime import date, datetime
 
-from svgkit import ASSETS, ROOT, THEMES, WIDTH, esc, rect, svg, text, text_width, write
+from svgkit import ASSETS, ROOT, stamp_readme, THEMES, WIDTH, esc, rect, svg, text, text_width, write
 
 LOGIN = "EugeneCarldotme"
 CDN = f"https://cdn.jsdelivr.net/gh/{LOGIN}/{LOGIN}@main/assets"
@@ -231,13 +231,12 @@ def more_card(n: int, t: dict) -> str:
     return svg(WIDTH, 40, label, text(WIDTH / 2, 26, label, t, size=18, fill=t["muted"], anchor="middle"))
 
 
-def picture(name: str, alt: str, version: str, href: str | None = None) -> str:
-    q = f"?v={version}" if version else ""
+def picture(name: str, alt: str, href: str | None = None) -> str:
     block = (
         "<picture>\n"
-        f'  <source media="(prefers-color-scheme: dark)" srcset="{CDN}/{name}-dark.svg{q}">\n'
-        f'  <source media="(prefers-color-scheme: light)" srcset="{CDN}/{name}-light.svg{q}">\n'
-        f'  <img src="{CDN}/{name}-dark.svg{q}" width="100%" alt="{esc(alt)}">\n'
+        f'  <source media="(prefers-color-scheme: dark)" srcset="{CDN}/{name}-dark.svg">\n'
+        f'  <source media="(prefers-color-scheme: light)" srcset="{CDN}/{name}-light.svg">\n'
+        f'  <img src="{CDN}/{name}-dark.svg" width="100%" alt="{esc(alt)}">\n'
         "</picture>"
     )
     return f'<a href="{href}">\n{block}\n</a>' if href else block
@@ -287,27 +286,26 @@ def main() -> None:
         if len(repos) > MAX_REPOS:
             write("oss-more", name, more_card(len(repos) - MAX_REPOS, t))
 
-    version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M")
-    parts = [picture("oss-caption", "Merged pull requests to repositories I don't own", "")]
+    parts = [picture("oss-caption", "Merged pull requests to repositories I don't own")]
     for i, group in enumerate(repos[:MAX_REPOS]):
         repo = group[0]["repository"]
-        parts.append(picture(f"oss-repo-{i:02d}", repo["nameWithOwner"], version, repo["url"]))
+        parts.append(picture(f"oss-repo-{i:02d}", repo["nameWithOwner"], repo["url"]))
     if len(repos) > MAX_REPOS:
         search = f"https://github.com/search?q=is%3Apr+author%3A{LOGIN}+is%3Amerged+-user%3A{LOGIN}&type=pullrequests"
-        parts.append(picture("oss-more", f"and {len(repos) - MAX_REPOS} more", version, search))
+        parts.append(picture("oss-more", f"and {len(repos) - MAX_REPOS} more", search))
     if prs:
-        parts.append(picture("oss-merges-caption", "Latest merges", ""))
+        parts.append(picture("oss-merges-caption", "Latest merges"))
         for i, pr in enumerate(sorted(prs, key=lambda p: p["mergedAt"], reverse=True)[:MAX_MERGES]):
             ref = f"{pr['repository']['nameWithOwner']}#{pr['number']}"
-            parts.append(picture(f"oss-merge-{i:02d}", ref, version, pr["url"]))
+            parts.append(picture(f"oss-merge-{i:02d}", ref, pr["url"]))
 
     readme = ROOT / "README.md"
     content = readme.read_text(encoding="utf-8")
     content = re.sub(r"<!-- oss:start -->.*<!-- oss:end -->",
                      lambda _: "<!-- oss:start -->\n" + "\n".join(parts) + "\n<!-- oss:end -->",
                      content, flags=re.S)
-    content = re.sub(r"(activity-(?:dark|light)\.svg)(\?v=\d+)?", rf"\1?v={version}", content)
     readme.write_text(content, encoding="utf-8")
+    stamp_readme()
     print(json.dumps(stats))
 
 

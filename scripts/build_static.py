@@ -8,7 +8,7 @@ token, so it is safe to run locally before pushing.
 from __future__ import annotations
 
 from svgkit import (
-    MONO, THEMES, WIDTH, esc, pill, rect, svg, text, text_width, write,
+    MONO, THEMES, WIDTH, esc, pill, rect, stamp_readme, svg, text, text_width, write,
 )
 
 STATUS = [
@@ -283,6 +283,7 @@ def main() -> None:
         write("stack", name, stack(t))
         for label in BADGES:
             write(f"badge-{label.lower()}", name, badge(label, t))
+    stamp_readme()
     print("static cards written")
 
 
