@@ -39,23 +39,23 @@
 <!-- projects:start -->
 <a href="https://planthing.app">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-planthing-dark.svg?v=53f7ac1393">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-planthing-light.svg?v=0eb3c2e969">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-planthing-dark.svg?v=53f7ac1393" width="100%" alt="PlanThing">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-planthing-dark.svg?v=83332be6bd">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-planthing-light.svg?v=2acc03406e">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-planthing-dark.svg?v=83332be6bd" width="100%" alt="PlanThing">
 </picture>
 </a>
 <a href="https://eugenecarl.me/#projects">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-labtracker-dark.svg?v=484aaeb800">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-labtracker-light.svg?v=753785232e">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-labtracker-dark.svg?v=484aaeb800" width="100%" alt="Mapua Library Lab Tracker">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-labtracker-dark.svg?v=d85f632f7f">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-labtracker-light.svg?v=3f445be129">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-labtracker-dark.svg?v=d85f632f7f" width="100%" alt="Mapua Library Lab Tracker">
 </picture>
 </a>
 <a href="https://eugenecarl.me/#projects">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-ectrivia-dark.svg?v=669da680b6">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-ectrivia-light.svg?v=57b351287f">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-ectrivia-dark.svg?v=669da680b6" width="100%" alt="EC Trivia">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-ectrivia-dark.svg?v=a2c52f4e9c">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-ectrivia-light.svg?v=727641dddf">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/project-ectrivia-dark.svg?v=a2c52f4e9c" width="100%" alt="EC Trivia">
 </picture>
 </a>
 <!-- projects:end -->

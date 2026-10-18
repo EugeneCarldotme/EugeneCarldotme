@@ -4,5 +4,5 @@
   <text x="46" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2328">EC Trivia</text>
   <text x="46" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" fill="#6C707E">Android · Java · Kafka · WebSocket</text>
   <text x="46" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#1F2328">Kahoot-style multiplayer quiz. Kafka splits the game services, WebSockets keep players in sync.</text>
-  <text x="1176" y="58" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#6C707E">Case study</text>
+  <text x="1176" y="58" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#B07219">Case study</text>
 </svg>

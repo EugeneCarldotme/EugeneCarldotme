@@ -27,7 +27,7 @@ SECTIONS = {
     "contact": "Contact",
 }
 
-# (slug, name, tags, description, link label, dot colour). The dot uses
+# (slug, name, tags, description, link label, colour). The dot and link use
 # GitHub's colour for the project's main language.
 PROJECTS = [
     ("planthing", "PlanThing", "TypeScript · React · Convex",
@@ -244,7 +244,7 @@ def project(name: str, tags: str, desc: str, link: str, dot: str, t: dict) -> st
     out += text(46, 36, name, t, size=24, weight=600)
     out += text(46, 62, tags, t, size=16, fill=t["muted"])
     out += text(46, 88, desc, t, size=18)
-    out += text(WIDTH - 24, 58, link, t, size=18, fill=t["muted"], anchor="end")
+    out += text(WIDTH - 24, 58, link, t, size=18, fill=dot, anchor="end")
     return svg(WIDTH, 112, name, out)
 
 

@@ -4,5 +4,5 @@
   <text x="46" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#DFE1E5">PlanThing</text>
   <text x="46" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" fill="#8C8F96">TypeScript · React · Convex</text>
   <text x="46" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#DFE1E5">A planner app for tasks and schedules, built on React and Convex.</text>
-  <text x="1176" y="58" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#8C8F96">planthing.app</text>
+  <text x="1176" y="58" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#3178C6">planthing.app</text>
 </svg>
