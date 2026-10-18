@@ -13,15 +13,15 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/sec-activity-dark.svg?v=202610181510">
-  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/sec-activity-light.svg?v=202610181510">
-  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/sec-activity-dark.svg?v=202610181510" width="100%" alt="Activity">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/sec-activity-dark.svg?v=202610181515">
+  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/sec-activity-light.svg?v=202610181515">
+  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/sec-activity-dark.svg?v=202610181515" width="100%" alt="Activity">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-dark.svg?v=202610181510">
-  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-light.svg?v=202610181510">
-  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-dark.svg?v=202610181510" width="100%" alt="Contribution counters, streaks and a breakdown of languages by bytes of code.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-dark.svg?v=202610181515">
+  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-light.svg?v=202610181515">
+  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-dark.svg?v=202610181515" width="100%" alt="Contribution counters, streaks and a breakdown of languages by bytes of code.">
 </picture>
 
 <picture>
@@ -74,9 +74,9 @@
 </picture>
 <a href="https://github.com/vorssaint/vorssaint-utils">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-repo-00-dark.svg?v=202610181510">
-  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-repo-00-light.svg?v=202610181510">
-  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-repo-00-dark.svg?v=202610181510" width="100%" alt="vorssaint/vorssaint-utils">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-repo-00-dark.svg?v=202610181515">
+  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-repo-00-light.svg?v=202610181515">
+  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-repo-00-dark.svg?v=202610181515" width="100%" alt="vorssaint/vorssaint-utils">
 </picture>
 </a>
 <picture>
@@ -86,23 +86,23 @@
 </picture>
 <a href="https://github.com/vorssaint/vorssaint-utils/pull/2385">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-00-dark.svg?v=202610181510">
-  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-00-light.svg?v=202610181510">
-  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-00-dark.svg?v=202610181510" width="100%" alt="vorssaint/vorssaint-utils#2385">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-00-dark.svg?v=202610181515">
+  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-00-light.svg?v=202610181515">
+  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-00-dark.svg?v=202610181515" width="100%" alt="vorssaint/vorssaint-utils#2385">
 </picture>
 </a>
 <a href="https://github.com/vorssaint/vorssaint-utils/pull/2962">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-01-dark.svg?v=202610181510">
-  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-01-light.svg?v=202610181510">
-  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-01-dark.svg?v=202610181510" width="100%" alt="vorssaint/vorssaint-utils#2962">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-01-dark.svg?v=202610181515">
+  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-01-light.svg?v=202610181515">
+  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-01-dark.svg?v=202610181515" width="100%" alt="vorssaint/vorssaint-utils#2962">
 </picture>
 </a>
 <a href="https://github.com/vorssaint/vorssaint-utils/pull/2233">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-02-dark.svg?v=202610181510">
-  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-02-light.svg?v=202610181510">
-  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-02-dark.svg?v=202610181510" width="100%" alt="vorssaint/vorssaint-utils#2233">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-02-dark.svg?v=202610181515">
+  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-02-light.svg?v=202610181515">
+  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/oss-merge-02-dark.svg?v=202610181515" width="100%" alt="vorssaint/vorssaint-utils#2233">
 </picture>
 </a>
 <!-- oss:end -->
