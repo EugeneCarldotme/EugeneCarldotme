@@ -199,6 +199,65 @@ def activity(stats: dict, langs: list[tuple[str, str, int]], t: dict) -> str:
     return svg(WIDTH, height, label, out)
 
 
+# Contribution levels from empty to busiest, in TypeScript blue.
+CALENDAR_SHADES = {
+    "dark": ["#393B40", "#0E3A6B", "#1A5FA8", "#2F80D9", "#58A6FF"],
+    "light": ["#E4E6EB", "#B6D4F5", "#7AAEEA", "#3B82D6", "#1E5FAF"],
+}
+
+
+def calendar(days: list[tuple[str, int]], total: int, theme: str, t: dict) -> str:
+    """A contribution calendar like the one on the profile page, one column
+    per week and one row per weekday starting on Sunday."""
+    shades = CALENDAR_SHADES[theme]
+    cell, step, left, top = 17, 21, 46, 74
+    first = date.fromisoformat(days[0][0])
+    start = date.fromordinal(first.toordinal() - (first.weekday() + 1) % 7)
+
+    # Split the busy days into quartiles so a single huge day doesn't wash
+    # out the rest of the year.
+    busy = sorted(c for _, c in days if c)
+    cuts = [busy[len(busy) * q // 4] for q in (1, 2, 3)] if busy else [0, 0, 0]
+
+    def level(c: int) -> int:
+        return 0 if not c else 1 + sum(c > cut for cut in cuts)
+
+    weeks = (date.fromisoformat(days[-1][0]) - start).days // 7 + 1
+    # Centre the grid in a full-width card so it lines up with the others.
+    left = 46 + (WIDTH - 68 - weeks * step) // 2
+    width = WIDTH
+    height = top + 7 * step + 46
+    out = rect(0.5, 0.5, width - 1, height - 1, t["panel"], rx=14, stroke=t["border"])
+    out += text(22, 38, f"{total:,} contributions in the last year", t, size=18, fill=t["muted"])
+
+    labels = []
+    for d, c in days:
+        day = date.fromisoformat(d)
+        col = (day - start).days // 7
+        row = (day.weekday() + 1) % 7
+        x, y = left + col * step, top + row * step
+        if row == 0 and (not labels or labels[-1][1] != day.strftime("%b")):
+            labels.append((col, day.strftime("%b")))
+        out += rect(x, y, cell, cell, shades[level(c)], rx=4)
+    # Drop a month label when the next one starts within three weeks, so a
+    # partial month at either edge doesn't crowd its neighbour.
+    for i, (col, month) in enumerate(labels):
+        if i + 1 < len(labels) and labels[i + 1][0] - col < 3:
+            continue
+        if col < weeks - 2:
+            out += text(left + col * step, top - 10, month, t, size=14, fill=t["muted"])
+    for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
+        out += text(left - 10, top + row * step + 13, label, t, size=13, fill=t["muted"], anchor="end")
+
+    legend_y = top + 7 * step + 14
+    x = width - 22 - 5 * step - text_width("More", 13)
+    out += text(x - 8, legend_y + 13, "Less", t, size=13, fill=t["muted"], anchor="end")
+    for i, shade in enumerate(shades):
+        out += rect(x + i * step, legend_y, cell, cell, shade, rx=4)
+    out += text(x + 5 * step + 4, legend_y + 13, "More", t, size=13, fill=t["muted"])
+    return svg(width, height, f"Contribution calendar, {total:,} contributions in the last year.", out)
+
+
 def caption(label: str, t: dict) -> str:
     return svg(WIDTH, 36, label, text(0, 24, label, t, size=18, fill=t["muted"]))
 
@@ -283,6 +342,7 @@ def main() -> None:
         old.unlink()
     for name, t in THEMES.items():
         write("activity", name, activity(stats, langs, t))
+        write("calendar", name, calendar(days, stats["total"], name, t))
         write("oss-caption", name, caption("Merged pull requests to repositories I don't own", t))
         write("oss-merges-caption", name, caption("Latest merges", t))
         for i, group in enumerate(repos[:MAX_REPOS]):
