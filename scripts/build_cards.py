@@ -20,7 +20,7 @@ from datetime import date, datetime
 from svgkit import ASSETS, ROOT, stamp_readme, THEMES, WIDTH, esc, rect, svg, text, text_width, write
 
 LOGIN = "EugeneCarldotme"
-CDN = f"https://cdn.jsdelivr.net/gh/{LOGIN}/{LOGIN}@main/assets"
+CDN = f"https://raw.githubusercontent.com/{LOGIN}/{LOGIN}/main/assets"
 MAX_REPOS = 6
 MAX_MERGES = 3
 

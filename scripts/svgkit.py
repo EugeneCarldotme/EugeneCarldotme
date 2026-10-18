@@ -139,9 +139,9 @@ def write(name: str, theme: str, content: str) -> Path:
 
 
 def stamp_readme() -> None:
-    """Put a short hash of each SVG on its README URL. jsDelivr tells browsers
-    to cache images for a week, so an image only refreshes when its URL
-    changes. Hashing the content changes the URL exactly when the card does."""
+    """Put a short hash of each SVG on its README URL. GitHub's image proxy
+    and browsers cache by URL, so a card only refreshes when its URL changes.
+    Hashing the content changes the URL exactly when the card does."""
     readme = ROOT / "README.md"
 
     def stamp(m: re.Match) -> str:
@@ -152,5 +152,5 @@ def stamp_readme() -> None:
         return f"{m.group(1)}{m.group(2)}?v={digest}"
 
     content = readme.read_text(encoding="utf-8")
-    content = re.sub(r"(@main/assets/)([\w-]+\.svg)(\?v=\w+)?", stamp, content)
+    content = re.sub(r"(/main/assets/)([\w-]+\.svg)(\?v=\w+)?", stamp, content)
     readme.write_text(content, encoding="utf-8")

@@ -59,13 +59,3 @@ jobs:
           git commit -m "chore: refresh profile cards"
           git pull --rebase origin main
           git push origin HEAD:main
-
-      # jsDelivr caches @main for up to 12 hours. The README also carries a
-      # ?v= stamp on the data cards, and the purge covers the static ones. It
-      # runs every time, because a push that changes static cards leaves this
-      # job nothing to commit.
-      - name: Purge jsDelivr cache
-        run: |
-          for f in assets/*.svg; do
-            curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$f" > /dev/null || true
-          done
