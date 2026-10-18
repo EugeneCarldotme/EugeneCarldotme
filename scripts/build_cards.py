@@ -203,22 +203,28 @@ def caption(label: str, t: dict) -> str:
     return svg(WIDTH, 36, label, text(0, 24, label, t, size=18, fill=t["muted"]))
 
 
+def lang_color(repo: dict, t: dict) -> str:
+    """GitHub's colour for the repo's main language, so a Swift repo reads
+    orange and a TypeScript one blue."""
+    return (repo.get("primaryLanguage") or {}).get("color") or t["muted"]
+
+
 def repo_card(repo: dict, count: int, t: dict) -> str:
     out = rect(0.5, 0.5, WIDTH - 1, 79, t["panel"], rx=14, stroke=t["border"])
     lang = repo.get("primaryLanguage") or {}
-    out += f'  <circle cx="24" cy="40" r="5" fill="{lang.get("color") or t["accent"]}"/>\n'
+    out += f'  <circle cx="24" cy="40" r="5" fill="{lang_color(repo, t)}"/>\n'
     out += text(46, 34, repo["nameWithOwner"], t, size=22, weight=600)
     meta = " · ".join(x for x in (lang.get("name"), f"★ {repo['stargazerCount']:,}") if x)
     out += text(46, 62, clip(f"{meta} · {repo.get('description') or ''}".rstrip(" ·"), 16, 900), t, size=16,
                 fill=t["muted"])
-    out += text(WIDTH - 24, 46, f"{count} merged", t, size=18, fill=t["muted"], anchor="end")
+    out += text(WIDTH - 24, 46, f"{count} merged", t, size=18, fill=lang_color(repo, t), anchor="end")
     return svg(WIDTH, 88, repo["nameWithOwner"], out)
 
 
 def merge_card(pr: dict, t: dict) -> str:
     out = rect(0.5, 0.5, WIDTH - 1, 55, t["panel"], rx=12, stroke=t["border"])
     ref = f"{pr['repository']['nameWithOwner']}#{pr['number']}"
-    out += text(22, 35, ref, t, size=17, fill=t["muted"], mono=True)
+    out += text(22, 35, ref, t, size=17, fill=lang_color(pr["repository"], t), mono=True)
     start = 22 + text_width(ref, 17, mono=True) + 18
     merged = datetime.fromisoformat(pr["mergedAt"].replace("Z", "+00:00")).strftime("%b %-d, %Y")
     out += text(start, 35, clip(pr["title"], 18, WIDTH - start - 180), t, size=18)

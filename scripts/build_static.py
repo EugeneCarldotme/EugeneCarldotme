@@ -11,11 +11,12 @@ from svgkit import (
     MONO, THEMES, WIDTH, esc, pill, rect, stamp_readme, svg, text, text_width, write,
 )
 
+# (label, outline colour key or None)
 STATUS = [
-    ("Manila, PH", False),
-    ("Kotlin by day", False),
-    ("TypeScript by night", False),
-    ("Building EC Stack", True),
+    ("Manila, PH", None),
+    ("Kotlin by day", None),
+    ("TypeScript by night", None),
+    ("Building EC Stack", "accent2"),
 ]
 
 SECTIONS = {
@@ -224,8 +225,8 @@ HERO_ALT = ("Eugene Carl, Kotlin developer by day and TypeScript developer by ni
 
 def status(t: dict) -> str:
     out, x = "", 0
-    for label, accent in STATUS:
-        chip, w = pill(x, 4, label, t, accent=accent)
+    for label, outline in STATUS:
+        chip, w = pill(x, 4, label, t, outline=outline)
         out += chip
         x += w + 10
     return svg(WIDTH, 48, ". ".join(s for s, _ in STATUS) + ".", out)

@@ -7,9 +7,9 @@
 **Kotlin developer by day, TypeScript developer by night.** By day I build and maintain backend APIs in Kotlin and Ktor. After hours I write TypeScript for EC Stack, the internal tools I build for my own development work, like EC Code and EC Review. In open source I write Swift, mostly fixes and features for [vorssaint-utils](https://github.com/vorssaint/vorssaint-utils), a macOS menu bar toolkit.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/status-dark.svg?v=4d2c4d1df3">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/status-light.svg?v=26e567e8fe">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/status-dark.svg?v=4d2c4d1df3" width="100%" alt="Manila, PH. Kotlin by day. TypeScript by night. Building EC Stack.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/status-dark.svg?v=0b9b41e0cf">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/status-light.svg?v=b25bc09cfa">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/status-dark.svg?v=0b9b41e0cf" width="100%" alt="Manila, PH. Kotlin by day. TypeScript by night. Building EC Stack.">
 </picture>
 
 <picture>
@@ -74,9 +74,9 @@
 </picture>
 <a href="https://github.com/vorssaint/vorssaint-utils">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=b83e37ed19">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-light.svg?v=a7bbaf09f3">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=b83e37ed19" width="100%" alt="vorssaint/vorssaint-utils">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=5d5d366cc4">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-light.svg?v=59d9bfbbca">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=5d5d366cc4" width="100%" alt="vorssaint/vorssaint-utils">
 </picture>
 </a>
 <picture>
@@ -86,23 +86,23 @@
 </picture>
 <a href="https://github.com/vorssaint/vorssaint-utils/pull/2385">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-00-dark.svg?v=d7ce4756ce">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-00-light.svg?v=8aa04aa37c">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-00-dark.svg?v=d7ce4756ce" width="100%" alt="vorssaint/vorssaint-utils#2385">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-00-dark.svg?v=74561bdca7">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-00-light.svg?v=8ae8743836">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-00-dark.svg?v=74561bdca7" width="100%" alt="vorssaint/vorssaint-utils#2385">
 </picture>
 </a>
 <a href="https://github.com/vorssaint/vorssaint-utils/pull/2962">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-01-dark.svg?v=69f2a0455b">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-01-light.svg?v=4499bffc6f">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-01-dark.svg?v=69f2a0455b" width="100%" alt="vorssaint/vorssaint-utils#2962">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-01-dark.svg?v=b897c22f43">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-01-light.svg?v=073582a34b">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-01-dark.svg?v=b897c22f43" width="100%" alt="vorssaint/vorssaint-utils#2962">
 </picture>
 </a>
 <a href="https://github.com/vorssaint/vorssaint-utils/pull/2233">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-02-dark.svg?v=4f8aa27dda">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-02-light.svg?v=b8917b4430">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-02-dark.svg?v=4f8aa27dda" width="100%" alt="vorssaint/vorssaint-utils#2233">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-02-dark.svg?v=c9c0cae484">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-02-light.svg?v=229ca2bfdf">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-merge-02-dark.svg?v=c9c0cae484" width="100%" alt="vorssaint/vorssaint-utils#2233">
 </picture>
 </a>
 <!-- oss:end -->
@@ -127,7 +127,7 @@
 
 <a href="https://eugenecarl.me"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-website-dark.svg?v=a0dd835035"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-website-light.svg?v=80d9441654"><img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-website-dark.svg?v=a0dd835035" height="44" alt="Website"></picture></a>
 <a href="https://www.linkedin.com/in/eugene-carl-dela-cruz-3696ba276/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-linkedin-dark.svg?v=14f64957a0"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-linkedin-light.svg?v=6e6e5b47a0"><img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-linkedin-dark.svg?v=14f64957a0" height="44" alt="LinkedIn"></picture></a>
-<a href="mailto:eccdelacruz@mymail.mapua.edu.ph"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-email-dark.svg?v=92f693294e"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-email-light.svg?v=1596ac39a3"><img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-email-dark.svg?v=92f693294e" height="44" alt="Email"></picture></a>
+<a href="mailto:iameugenedc@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-email-dark.svg?v=92f693294e"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-email-light.svg?v=1596ac39a3"><img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/badge-email-dark.svg?v=92f693294e" height="44" alt="Email"></picture></a>
 
 <p align="center">
   <img src="https://hits.sh/github.com/EugeneCarldotme.svg?style=flat-square&label=Profile%20views&color=7F52FF" alt="Profile views">

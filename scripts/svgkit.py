@@ -119,13 +119,13 @@ def rect(x, y, w, h, fill, rx=0, stroke=None):
     return f'  <rect x="{x:g}" y="{y:g}" width="{w:g}" height="{h:g}"{r} fill="{fill}"{s}/>\n'
 
 
-def pill(x, y, label, t, accent=False, size=20, height=40):
+def pill(x, y, label, t, outline=None, size=20, height=40):
     """A rounded chip. Returns (svg, width) so callers can lay chips out in a row.
-    An accent chip gets a purple outline and label instead of a solid fill."""
+    Pass a theme colour key as outline to draw the border and label in it."""
     w = round(text_width(label, size) + 36)
     fill = t["panel"]
-    stroke = t["accent"] if accent else t["border"]
-    color = t["accent"] if accent else t["text"]
+    stroke = t[outline] if outline else t["border"]
+    color = t[outline] if outline else t["text"]
     out = rect(x, y, w, height, fill, rx=10, stroke=stroke)
     out += text(x + 18, y + height / 2 + size * 0.35, label, t, size=size, fill=color)
     return out, w
