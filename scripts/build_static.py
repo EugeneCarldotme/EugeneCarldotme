@@ -37,7 +37,7 @@ PROJECTS = [
      "Case study", "#3178C6"),
     ("ectrivia", "EC Trivia", "Android · Java · Kafka · WebSocket",
      "Kahoot-style multiplayer quiz. Kafka splits the game services, WebSockets keep players in sync.",
-     "GitHub", "#B07219"),
+     "Case study", "#B07219"),
 ]
 
 STACK = [

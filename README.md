@@ -51,7 +51,7 @@
   <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/project-labtracker-dark.svg" width="100%" alt="Mapua Library Lab Tracker">
 </picture>
 </a>
-<a href="https://github.com/EugeneCarldotme/ECTrivia">
+<a href="https://eugenecarl.me/#projects">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/project-ectrivia-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/project-ectrivia-light.svg">
