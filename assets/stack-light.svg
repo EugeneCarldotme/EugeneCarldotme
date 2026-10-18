@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 444" width="1200" height="444" role="img" aria-label="By day, backend: Kotlin, Ktor, Elide, Go, Google Cloud, PostgreSQL; By night, full stack: TypeScript, React, React Native, Vite+, TanStack, Next.js, Convex, Electron; In open source: Swift, SwiftUI, AppKit, macOS; Also shipped with: Java, Android, Apache Kafka, WebSockets; Tooling: Git, IntelliJ IDEA, Postman, GitHub Actions">
+  <text x="0" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1.4" fill="#6C707E">BY DAY, BACKEND</text>
+  <rect x="0" y="26" width="89" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="18" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Kotlin</text>
+  <rect x="99" y="26" width="74" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="117" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Ktor</text>
+  <rect x="183" y="26" width="82" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="201" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Elide</text>
+  <rect x="275" y="26" width="60" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="293" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Go</text>
+  <rect x="345" y="26" width="156" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="363" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Google Cloud</text>
+  <rect x="511" y="26" width="145" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="529" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">PostgreSQL</text>
+  <text x="0" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1.4" fill="#6C707E">BY NIGHT, FULL STACK</text>
+  <rect x="0" y="118" width="136" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="18" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">TypeScript</text>
+  <rect x="146" y="118" width="88" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="164" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">React</text>
+  <rect x="244" y="118" width="154" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="262" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">React Native</text>
+  <rect x="408" y="118" width="83" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="426" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Vite+</text>
+  <rect x="501" y="118" width="123" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="519" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">TanStack</text>
+  <rect x="634" y="118" width="101" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="652" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Next.js</text>
+  <rect x="745" y="118" width="103" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="763" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Convex</text>
+  <rect x="858" y="118" width="112" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="876" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Electron</text>
+  <text x="0" y="198" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1.4" fill="#6C707E">IN OPEN SOURCE</text>
+  <rect x="0" y="210" width="86" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="18" y="237" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Swift</text>
+  <rect x="96" y="210" width="112" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="114" y="237" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">SwiftUI</text>
+  <rect x="218" y="210" width="96" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="236" y="237" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">AppKit</text>
+  <rect x="324" y="210" width="100" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="342" y="237" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">macOS</text>
+  <text x="0" y="290" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1.4" fill="#6C707E">ALSO SHIPPED WITH</text>
+  <rect x="0" y="302" width="81" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="18" y="329" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Java</text>
+  <rect x="91" y="302" width="105" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="109" y="329" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Android</text>
+  <rect x="206" y="302" width="162" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="224" y="329" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Apache Kafka</text>
+  <rect x="378" y="302" width="149" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="396" y="329" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">WebSockets</text>
+  <text x="0" y="382" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1.4" fill="#6C707E">TOOLING</text>
+  <rect x="0" y="394" width="62" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="18" y="421" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Git</text>
+  <rect x="72" y="394" width="166" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="90" y="421" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">IntelliJ IDEA</text>
+  <rect x="248" y="394" width="116" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="266" y="421" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">Postman</text>
+  <rect x="374" y="394" width="172" height="40" rx="10" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="392" y="421" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#1F2328">GitHub Actions</text>
+</svg>

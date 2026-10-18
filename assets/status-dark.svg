@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 48" width="1200" height="48" role="img" aria-label="Manila, PH. Kotlin by day. TypeScript by night. Building EC Stack.">
+  <rect x="0" y="4" width="135" height="40" rx="10" fill="#2B2D30" stroke="#393B40"/>
+  <text x="18" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#DFE1E5">Manila, PH</text>
+  <rect x="145" y="4" width="157" height="40" rx="10" fill="#2B2D30" stroke="#393B40"/>
+  <text x="163" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#DFE1E5">Kotlin by day</text>
+  <rect x="312" y="4" width="217" height="40" rx="10" fill="#2B2D30" stroke="#393B40"/>
+  <text x="330" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#DFE1E5">TypeScript by night</text>
+  <rect x="539" y="4" width="201" height="40" rx="10" fill="#2B2D30" stroke="#A97BFF"/>
+  <text x="557" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#A97BFF">Building EC Stack</text>
+</svg>

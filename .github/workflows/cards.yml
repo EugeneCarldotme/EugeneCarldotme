@@ -1,0 +1,71 @@
+name: Cards
+
+# Redraws the SVG cards in assets/ every day and commits them. The cards render
+# here instead of on a hosted badge service, so another service's rate limit or
+# outage can't break the profile.
+
+on:
+  schedule:
+    - cron: "0 20 * * *" # 4am Manila
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/cards.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cards
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # A fine-grained personal token with read-only Metadata on all my repos
+      # lets the languages bar count private repos too. The card only shows
+      # byte totals per language, never repo names or code. Without the token
+      # the job falls back to the workflow token, which sees public repos only.
+      GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render static cards
+        working-directory: scripts
+        run: python3 build_static.py
+
+      - name: Render data cards
+        working-directory: scripts
+        run: python3 build_cards.py
+
+      - name: Commit refreshed cards
+        run: |
+          if [ -z "$(git status --porcelain -- assets README.md)" ]; then
+            echo "cards unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets README.md
+          git commit -m "chore: refresh profile cards"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      # jsDelivr caches @main for up to 12 hours. The README also carries a
+      # ?v= stamp on the data cards, and the purge covers the static ones. It
+      # runs every time, because a push that changes static cards leaves this
+      # job nothing to commit.
+      - name: Purge jsDelivr cache
+        run: |
+          for f in assets/*.svg; do
+            curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$f" > /dev/null || true
+          done

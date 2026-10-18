@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 64" width="1200" height="64" role="img" aria-label="vorssaint/vorssaint-utils#2385: fix(notch): show sharp covers for music playing in Zen and Firefox">
+  <rect x="0.5" y="0.5" width="1199" height="55" rx="12" fill="#F7F8FA" stroke="#D3D5DB"/>
+  <text x="22" y="35" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#6C707E">vorssaint/vorssaint-utils#2385</text>
+  <text x="346" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#1F2328">fix(notch): show sharp covers for music playing in Zen and Firefox</text>
+  <text x="1178" y="35" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" fill="#6C707E">Oct 16, 2026</text>
+</svg>
