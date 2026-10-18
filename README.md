@@ -132,5 +132,3 @@
 <p align="center">
   <img src="https://hits.sh/github.com/EugeneCarldotme.svg?style=flat-square&label=Profile%20views&color=7F52FF" alt="Profile views">
 </p>
-
-<sub>A GitHub Action redraws the activity and open source cards every day from the GitHub API, so this page doesn't depend on a third-party stats service staying up.</sub>
