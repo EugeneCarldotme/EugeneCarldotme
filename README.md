@@ -19,9 +19,9 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/activity-dark.svg?v=4d2b52f500">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/activity-light.svg?v=27e37bfea9">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/activity-dark.svg?v=4d2b52f500" width="100%" alt="Contribution counters, streaks and a breakdown of languages by bytes of code.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/activity-dark.svg?v=3f92159ba0">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/activity-light.svg?v=4365cdfde8">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/activity-dark.svg?v=3f92159ba0" width="100%" alt="Contribution counters, streaks and a breakdown of languages by bytes of code.">
 </picture>
 
 <picture>
@@ -74,9 +74,9 @@
 </picture>
 <a href="https://github.com/vorssaint/vorssaint-utils">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=5d5d366cc4">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-light.svg?v=59d9bfbbca">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=5d5d366cc4" width="100%" alt="vorssaint/vorssaint-utils">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=4dcbfcfb26">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-light.svg?v=c04c8e43b3">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=4dcbfcfb26" width="100%" alt="vorssaint/vorssaint-utils">
 </picture>
 </a>
 <picture>
