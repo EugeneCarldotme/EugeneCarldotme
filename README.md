@@ -19,9 +19,9 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-dark.svg?v=1ba8f32a64">
-  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-light.svg?v=4c15d9e5f9">
-  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-dark.svg?v=1ba8f32a64" width="100%" alt="Contribution counters, streaks and a breakdown of languages by bytes of code.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-dark.svg?v=4d2b52f500">
+  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-light.svg?v=27e37bfea9">
+  <img src="https://cdn.jsdelivr.net/gh/EugeneCarldotme/EugeneCarldotme@main/assets/activity-dark.svg?v=4d2b52f500" width="100%" alt="Contribution counters, streaks and a breakdown of languages by bytes of code.">
 </picture>
 
 <picture>
