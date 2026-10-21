@@ -27,10 +27,11 @@ jobs:
     timeout-minutes: 10
     env:
       TZ: Asia/Manila
-      # A fine-grained personal token with read-only Metadata on all my repos
-      # lets the languages bar count private repos too. The card only shows
-      # byte totals per language, never repo names or code. Without the token
-      # the job falls back to the workflow token, which sees public repos only.
+      # Personal token owned by EugeneCarldotme, covering all repositories.
+      # Read-only Metadata, Contents, Pull requests, and Issues include private
+      # stats. Only aggregate counts/language totals are published. The open
+      # source list is explicitly public-only. Without this token, stats use
+      # the workflow token and see public repositories only.
       GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
       GITHUB_TOKEN: ${{ github.token }}
     steps:

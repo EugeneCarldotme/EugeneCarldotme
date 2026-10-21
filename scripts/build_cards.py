@@ -2,9 +2,9 @@
 Also rewrites the activity and open source blocks in README.md and changes
 image URLs whenever their contents change, bypassing GitHub's image cache.
 
-Needs a token in GH_STATS_TOKEN or GITHUB_TOKEN. A fine-grained personal
-token with read-only Metadata on all my repos adds private repos to the
-languages bar. The workflow token only sees public ones.
+Needs a token in GH_STATS_TOKEN or GITHUB_TOKEN. The personal token needs
+read-only Metadata, Contents, Pull requests, and Issues on all repositories
+to include private stats. Only aggregate private counts are published.
 """
 
 from __future__ import annotations
@@ -28,6 +28,8 @@ MAX_MERGES = 3
 PROFILE_QUERY = """
 query($login: String!, $from: DateTime!, $to: DateTime!) {
   user(login: $login) {
+    id
+    login
     name
     createdAt
     followers { totalCount }
@@ -38,9 +40,35 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
       totalCommitContributions
       totalPullRequestReviewContributions
       totalRepositoriesWithContributedCommits
+      commitContributionsByRepository(maxRepositories: 100) {
+        repository { id isPrivate }
+      }
       contributionCalendar {
         totalContributions
         weeks { contributionDays { date contributionCount } }
+      }
+    }
+  }
+}
+"""
+
+VIEWER_PROFILE_QUERY = PROFILE_QUERY.replace("$login: String!, ", "").replace(
+    "user(login: $login)", "user: viewer",
+)
+
+PRIVATE_STATS_QUERY = """
+query($after: String, $author: ID!, $from: GitTimestamp!, $to: GitTimestamp!) {
+  viewer {
+    repositories(first: 100, after: $after, privacy: PRIVATE, isFork: false,
+                 affiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]) {
+      pageInfo { hasNextPage endCursor }
+      nodes {
+        id
+        defaultBranchRef {
+          target { ... on Commit {
+            history(author: {id: $author}, since: $from, until: $to) { totalCount }
+          } }
+        }
       }
     }
   }
@@ -89,6 +117,7 @@ query($q: String!, $after: String) {
         url
         mergedAt
         repository {
+          isPrivate
           nameWithOwner
           description
           url
@@ -100,6 +129,10 @@ query($q: String!, $after: String) {
   }
 }
 """
+
+
+class GitHubAPIError(RuntimeError):
+    pass
 
 
 def graphql(query: str, variables: dict) -> dict:
@@ -114,7 +147,7 @@ def graphql(query: str, variables: dict) -> dict:
     with urllib.request.urlopen(req, timeout=30) as resp:
         payload = json.load(resp)
     if payload.get("errors"):
-        sys.exit(json.dumps(payload["errors"], indent=2))
+        raise GitHubAPIError(json.dumps(payload["errors"], indent=2))
     return payload["data"]
 
 
@@ -222,14 +255,55 @@ def owned_repos() -> list[dict]:
 
 
 def merged_prs() -> list[dict]:
-    q = f"is:pr author:{LOGIN} is:merged -user:{LOGIN}"
+    q = f"is:pr author:{LOGIN} is:merged is:public -user:{LOGIN}"
     prs, after = [], None
     while True:
         data = graphql(PR_QUERY, {"q": q, "after": after})["search"]
-        prs += [n for n in data["nodes"] if n]
+        prs += [n for n in data["nodes"] if n and not n["repository"]["isPrivate"]]
         if not data["pageInfo"]["hasNextPage"] or len(prs) >= 500:
             return prs
         after = data["pageInfo"]["endCursor"]
+
+
+def private_stats(user: dict, year_start: datetime, now: datetime) -> dict:
+    """Supplement contribution totals with authored commits on private default branches.
+
+    GitHub's contribution calendar includes anonymous private activity, but
+    its typed commit counter can omit it. Never assume all anonymous activity
+    is commits, since it can also include issues, PRs, and reviews.
+    """
+    result = {"commits": 0, "contributed": 0}
+    if not os.environ.get("GH_STATS_TOKEN"):
+        return result
+    included = {entry["repository"]["id"] for entry in
+                user["contributionsCollection"]["commitContributionsByRepository"]
+                if entry["repository"]["isPrivate"]}
+    after = None
+    while True:
+        try:
+            page = graphql(PRIVATE_STATS_QUERY, {
+                "after": after, "author": user["id"],
+                "from": year_start.isoformat(), "to": now.isoformat(),
+            })["viewer"]["repositories"]
+        except GitHubAPIError as error:
+            if "Resource not accessible" not in str(error):
+                raise
+            # Keep the last successful cards rather than replace private totals
+            # with public-only numbers when the token loses access.
+            raise GitHubAPIError(
+                "GH_STATS_TOKEN needs read-only Contents access on all repositories. "
+                "The existing cards have been preserved."
+            ) from None
+        for repo in page["nodes"]:
+            if repo["id"] in included or not repo["defaultBranchRef"]:
+                continue
+            count = repo["defaultBranchRef"]["target"]["history"]["totalCount"]
+            result["commits"] += count
+            result["contributed"] += bool(count)
+        if not page["pageInfo"]["hasNextPage"]:
+            print(f"supplemental private stats: {result['commits']} commits in {result['contributed']} repositories", file=sys.stderr)
+            return result
+        after = page["pageInfo"]["endCursor"]
 
 
 def plural(n: int, word: str) -> str:
@@ -453,12 +527,12 @@ def more_card(n: int, t: dict) -> str:
     return svg(WIDTH, 40, label, text(WIDTH / 2, 26, label, t, size=18, fill=t["muted"], anchor="middle"))
 
 
-def picture(name: str, alt: str, href: str | None = None) -> str:
+def picture(name: str, alt: str, href: str | None = None, width: int | str = "100%") -> str:
     block = (
         "<picture>\n"
         f'  <source media="(prefers-color-scheme: dark)" srcset="{CDN}/{name}-dark.svg">\n'
         f'  <source media="(prefers-color-scheme: light)" srcset="{CDN}/{name}-light.svg">\n'
-        f'  <img src="{CDN}/{name}-dark.svg" width="100%" alt="{esc(alt)}">\n'
+        f'  <img src="{CDN}/{name}-dark.svg" width="{width}" alt="{esc(alt)}">\n'
         "</picture>"
     )
     return f'<a href="{href}">\n{block}\n</a>' if href else block
@@ -469,9 +543,14 @@ def main() -> None:
     local_now = now.astimezone(ZoneInfo("Asia/Manila"))
     # Use GitHub's calendar dates, starting January 1 rather than a rolling year.
     year_start = datetime(now.year, 1, 1, tzinfo=timezone.utc)
-    user = graphql(PROFILE_QUERY, {
-        "login": LOGIN, "from": year_start.isoformat(), "to": now.isoformat(),
-    })["user"]
+    personal = bool(os.environ.get("GH_STATS_TOKEN"))
+    variables = {"from": year_start.isoformat(), "to": now.isoformat()}
+    if not personal:
+        variables["login"] = LOGIN
+    user = graphql(VIEWER_PROFILE_QUERY if personal else PROFILE_QUERY, variables)["user"]
+    if user["login"].lower() != LOGIN.lower():
+        sys.exit("GH_STATS_TOKEN must belong to the profile owner")
+    private = private_stats(user, year_start, now)
     cal = user["contributionsCollection"]["contributionCalendar"]
     days = [(d["date"], d["contributionCount"]) for w in cal["weeks"] for d in w["contributionDays"]]
     today = local_now.date().isoformat()
@@ -501,10 +580,10 @@ def main() -> None:
         "active": sum(1 for _, c in days if c),
         "name": user["name"] or LOGIN,
         "joined": user["createdAt"],
-        "stars": sum(r["stargazerCount"] for r in owned if not r["isPrivate"]),
-        "commits": user["contributionsCollection"]["totalCommitContributions"],
+        "stars": sum(r["stargazerCount"] for r in owned),
+        "commits": user["contributionsCollection"]["totalCommitContributions"] + private["commits"],
         "reviews": user["contributionsCollection"]["totalPullRequestReviewContributions"],
-        "contributed": user["contributionsCollection"]["totalRepositoriesWithContributedCommits"],
+        "contributed": user["contributionsCollection"]["totalRepositoriesWithContributedCommits"] + private["contributed"],
         "prs": user["pullRequests"]["totalCount"],
         "issues": user["issues"]["totalCount"],
         "followers": user["followers"]["totalCount"],
@@ -539,7 +618,7 @@ def main() -> None:
         repo = group[0]["repository"]
         parts.append(picture(f"oss-repo-{i:02d}", repo["nameWithOwner"], repo["url"]))
     if len(repos) > MAX_REPOS:
-        search = f"https://github.com/search?q=is%3Apr+author%3A{LOGIN}+is%3Amerged+-user%3A{LOGIN}&type=pullrequests"
+        search = f"https://github.com/search?q=is%3Apr+author%3A{LOGIN}+is%3Amerged+is%3Apublic+-user%3A{LOGIN}&type=pullrequests"
         parts.append(picture("oss-more", f"and {len(repos) - MAX_REPOS} more", search))
     if prs:
         parts.append(picture("oss-merges-caption", "Latest merges"))
@@ -550,8 +629,8 @@ def main() -> None:
     readme = ROOT / "README.md"
     content = readme.read_text(encoding="utf-8")
     activity_cards = [
-        picture("stats", "GitHub stats: stars earned, commits this year, pull requests, issues, and repositories contributed to this year."),
-        picture("streak", "Total contributions since joining GitHub, current weekly streak, and longest weekly streak."),
+        picture("stats", "GitHub stats: stars earned, commits this year, pull requests, issues, and repositories contributed to this year.", width=585),
+        picture("streak", "Total contributions since joining GitHub, current weekly streak, and longest weekly streak.", width=620),
         picture("calendar", "Contribution heat map from January 1 through today. Refreshed hourly with the last update time in Manila."),
         picture("activity", "Languages by bytes of code in my repositories."),
     ]
