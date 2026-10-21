@@ -1,9 +1,3 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/hero-dark.svg?v=e468783178">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/hero-light.svg?v=4247351f38">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/hero-dark.svg?v=e468783178" width="100%" alt="Eugene Carl, Kotlin developer by day and TypeScript developer by night. An editor shows a Ktor route above an EC Stack snippet. The preview shows an Android phone listing the Ktor routes and an iPhone running EC Stack.">
-</picture>
-
 **Kotlin developer by day, TypeScript developer by night.** By day I build and maintain backend APIs in Kotlin and Ktor. After hours I write TypeScript for EC Stack, the internal tools I build for my own development work, like EC Code and EC Review. In open source I write Swift, mostly fixes and features for [vorssaint-utils](https://github.com/vorssaint/vorssaint-utils), a macOS menu bar toolkit.
 
 <picture>
