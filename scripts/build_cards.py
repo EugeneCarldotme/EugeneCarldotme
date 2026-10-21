@@ -26,14 +26,14 @@ MAX_REPOS = 6
 MAX_MERGES = 3
 
 PROFILE_QUERY = """
-query($login: String!) {
+query($login: String!, $from: DateTime!, $to: DateTime!) {
   user(login: $login) {
     name
     createdAt
     followers { totalCount }
     pullRequests { totalCount }
     issues { totalCount }
-    contributionsCollection {
+    contributionsCollection(from: $from, to: $to) {
       contributionYears
       totalCommitContributions
       totalPullRequestReviewContributions
@@ -267,10 +267,10 @@ def stats_card(stats: dict, t: dict) -> str:
     ]
     rows = [
         ("Total stars earned", stats["stars"]),
-        ("Total commits (last year)", stats["commits"]),
+        ("Total commits (this year)", stats["commits"]),
         ("Total PRs", stats["prs"]),
         ("Total issues", stats["issues"]),
-        ("Contributed to (last year)", stats["contributed"]),
+        ("Contributed to (this year)", stats["contributed"]),
     ]
     for i, ((label, value), path) in enumerate(zip(rows, icons)):
         y = 173 + i * 60
@@ -381,7 +381,7 @@ def calendar(days: list[tuple[str, int]], total: int, theme: str, t: dict, updat
     width = WIDTH
     height = top + 7 * step + 46
     out = rect(0.5, 0.5, width - 1, height - 1, t["panel"], rx=14, stroke=t["border"])
-    out += text(22, 38, f"{total:,} contributions in the last year", t, size=18, fill=t["muted"])
+    out += text(22, 38, f"{total:,} contributions this year", t, size=18, fill=t["muted"])
     if updated:
         out += text(WIDTH - 22, 38, f"Updated {updated} PHT", t, size=16, fill=t["muted"], anchor="end")
 
@@ -412,7 +412,7 @@ def calendar(days: list[tuple[str, int]], total: int, theme: str, t: dict, updat
     for i, shade in enumerate(shades):
         out += rect(x + i * step, legend_y, cell, cell, shade, rx=4)
     out += text(x + 5 * step + 4, legend_y + 13, "More", t, size=13, fill=t["muted"])
-    return svg(width, height, f"Contribution calendar, {total:,} contributions in the last year.", out)
+    return svg(width, height, f"Contribution calendar, {total:,} contributions this year.", out)
 
 
 def caption(label: str, t: dict) -> str:
@@ -467,11 +467,15 @@ def picture(name: str, alt: str, href: str | None = None) -> str:
 def main() -> None:
     now = datetime.now(timezone.utc)
     local_now = now.astimezone(ZoneInfo("Asia/Manila"))
-    user = graphql(PROFILE_QUERY, {"login": LOGIN})["user"]
+    # Use GitHub's calendar dates, starting January 1 rather than a rolling year.
+    year_start = datetime(now.year, 1, 1, tzinfo=timezone.utc)
+    user = graphql(PROFILE_QUERY, {
+        "login": LOGIN, "from": year_start.isoformat(), "to": now.isoformat(),
+    })["user"]
     cal = user["contributionsCollection"]["contributionCalendar"]
     days = [(d["date"], d["contributionCount"]) for w in cal["weeks"] for d in w["contributionDays"]]
     today = local_now.date().isoformat()
-    days = [d for d in days if d[0] <= today]
+    days = [d for d in days if year_start.date().isoformat() <= d[0] <= today]
     current, longest = streaks(days)
 
     sizes: dict[str, list] = {}
@@ -489,7 +493,7 @@ def main() -> None:
     repos = sorted(by_repo.values(), key=lambda v: (-len(v), v[0]["mergedAt"]))
 
     stats = {
-        "total": cal["totalContributions"],
+        "total": sum(c for _, c in days),
         "current": current,
         "longest": longest,
         "merged": len(prs),
@@ -506,7 +510,7 @@ def main() -> None:
         "followers": user["followers"]["totalCount"],
     }
     history = contribution_history(user["contributionsCollection"]["contributionYears"], now)
-    # The rolling calendar is the freshest response for recent dates.
+    # The year-to-date calendar is the freshest response for recent dates.
     history = sorted({**dict(history), **dict(days)}.items())
     history = [(d, c) for d, c in history if stats["joined"][:10] <= d <= today]
     stats["all_time"] = sum(c for _, c in history)
@@ -546,9 +550,9 @@ def main() -> None:
     readme = ROOT / "README.md"
     content = readme.read_text(encoding="utf-8")
     activity_cards = [
-        picture("stats", "GitHub stats: stars earned, commits in the last year, pull requests, issues, and repositories contributed to."),
+        picture("stats", "GitHub stats: stars earned, commits this year, pull requests, issues, and repositories contributed to this year."),
         picture("streak", "Total contributions since joining GitHub, current weekly streak, and longest weekly streak."),
-        picture("calendar", "Contribution heat map for the last year. Refreshed hourly with the last update time in Manila."),
+        picture("calendar", "Contribution heat map from January 1 through today. Refreshed hourly with the last update time in Manila."),
         picture("activity", "Languages by bytes of code in my repositories."),
     ]
     content = re.sub(r"<!-- activity:start -->.*?<!-- activity:end -->",

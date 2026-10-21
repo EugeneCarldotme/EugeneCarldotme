@@ -48,9 +48,18 @@ class RefreshTests(unittest.TestCase):
         count = 3
 
         def live_response(query, variables):
+            if query == cards.PROFILE_QUERY:
+                start = datetime.fromisoformat(variables["from"])
+                self.assertEqual(start, datetime(now.year, 1, 1, tzinfo=timezone.utc))
+                self.assertLessEqual(datetime.fromisoformat(variables["to"]), datetime.now(timezone.utc))
             calendar = {"totalContributions": count, "weeks": [{"contributionDays": [
                 {"date": day, "contributionCount": count},
             ]}]}
+            if query == cards.PROFILE_QUERY:
+                # Calendar week padding must not bring last year's days into this year's heat map.
+                calendar["weeks"][0]["contributionDays"].insert(0, {
+                    "date": f"{now.year - 1}-12-31", "contributionCount": 99,
+                })
             collection = {"contributionCalendar": calendar, "contributionYears": [now.year],
                           "totalCommitContributions": count, "totalPullRequestReviewContributions": 0,
                           "totalRepositoriesWithContributedCommits": 1}
@@ -81,7 +90,9 @@ class RefreshTests(unittest.TestCase):
                 calendar_url = r'calendar-dark\.svg\?v=[a-f0-9]+'
                 self.assertNotEqual(re.search(calendar_url, old_readme).group(),
                                     re.search(calendar_url, new_readme).group())
-                self.assertIn("4 contributions in the last year", new_svg)
+                self.assertIn("4 contributions this year", new_svg)
+                self.assertNotIn(f"{now.year - 1}-12-31", new_svg)
+                self.assertIn("Total commits (this year)", (assets / "stats-dark.svg").read_text())
                 self.assertIn("Updated ", new_svg)
                 self.assertIn("4 total contributions", (assets / "streak-dark.svg").read_text())
                 for path in assets.glob("*.svg"):
