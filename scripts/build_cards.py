@@ -1,4 +1,4 @@
-"""Render live GitHub stats, all-time weekly streaks, languages, and the heat map.
+"""Render live GitHub stats, year-to-date weekly streaks, languages, and the heat map.
 Also rewrites the activity and open source blocks in README.md and changes
 image URLs whenever their contents change, bypassing GitHub's image cache.
 
@@ -31,12 +31,10 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
     id
     login
     name
-    createdAt
     followers { totalCount }
     pullRequests { totalCount }
     issues { totalCount }
     contributionsCollection(from: $from, to: $to) {
-      contributionYears
       totalCommitContributions
       totalPullRequestReviewContributions
       totalRepositoriesWithContributedCommits
@@ -69,18 +67,6 @@ query($after: String, $author: ID!, $from: GitTimestamp!, $to: GitTimestamp!) {
             history(author: {id: $author}, since: $from, until: $to) { totalCount }
           } }
         }
-      }
-    }
-  }
-}
-"""
-
-HISTORY_QUERY = """
-query($login: String!, $from: DateTime!, $to: DateTime!) {
-  user(login: $login) {
-    contributionsCollection(from: $from, to: $to) {
-      contributionCalendar {
-        weeks { contributionDays { date contributionCount } }
       }
     }
   }
@@ -167,21 +153,6 @@ def streaks(days: list[tuple[str, int]]) -> tuple[int, int]:
             break
         current += 1
     return current, longest
-
-
-def contribution_history(years: list[int], now: datetime) -> list[tuple[str, int]]:
-    """Fetch each calendar year once, without counting boundary days twice."""
-    days = {}
-    for year in sorted(years):
-        end = min(datetime(year, 12, 31, 23, 59, 59, tzinfo=timezone.utc), now)
-        data = graphql(HISTORY_QUERY, {
-            "login": LOGIN, "from": f"{year}-01-01T00:00:00Z", "to": end.isoformat(),
-        })["user"]["contributionsCollection"]["contributionCalendar"]
-        for week in data["weeks"]:
-            for day in week["contributionDays"]:
-                if day["date"].startswith(str(year)):
-                    days[day["date"]] = day["contributionCount"]
-    return sorted(days.items())
 
 
 def weekly_streaks(days: list[tuple[str, int]], today: date) -> dict:
@@ -333,6 +304,7 @@ def stats_card(stats: dict, t: dict) -> str:
     out = rect(1, 1, WIDTH - 2, height - 2, t["panel"], rx=12, stroke=t["border"])
     out += text(62, 88, f"{stats['name']}'s GitHub stats", t, size=40, weight=700, fill=t["accent2"])
     icons = [
+        "M3 3h18v18H3zM3 9h18M9 9v12M15 9v12M3 15h18",
         "M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z",
         "M3 12a9 9 0 1 0 3-7M3 2v6h6M12 7v5l3 2",
         "M6 6v12M16 6c4 0 4 5 0 6v6M3 3h6v6H3zM13 15h6v6h-6z",
@@ -340,6 +312,7 @@ def stats_card(stats: dict, t: dict) -> str:
         "M4 3h15v17H4zM7 17h9M8 20v3",
     ]
     rows = [
+        ("Contributions (this year)", stats["total"]),
         ("Total stars earned", stats["stars"]),
         ("Total commits (this year)", stats["commits"]),
         ("Total PRs", stats["prs"]),
@@ -347,7 +320,7 @@ def stats_card(stats: dict, t: dict) -> str:
         ("Contributed to (this year)", stats["contributed"]),
     ]
     for i, ((label, value), path) in enumerate(zip(rows, icons)):
-        y = 173 + i * 60
+        y = 147 + i * 54
         out += (f'<path d="{path}" transform="translate(63 {y - 28}) scale(1.45)" '
                 f'fill="none" stroke="{t["accent2"]}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>\n')
         out += text(124, y, label + ":", t, size=29, weight=600)
@@ -374,10 +347,9 @@ def streak_card(stats: dict, weekly: dict, t: dict) -> str:
     out = rect(1, 1, WIDTH - 2, height - 2, t["panel"], rx=12, stroke=t["border"])
     for x in (400, 800):
         out += f'<path d="M{x} 66V405" stroke="{t["border"]}" stroke-width="2"/>\n'
-    out += text(200, 194, f"{stats['all_time']:,}", t, size=66, weight=700, fill=t["accent2"], anchor="middle")
-    out += text(200, 279, "Total contributions", t, size=31, fill=t["accent2"], anchor="middle")
-    joined = date.fromisoformat(stats["joined"][:10])
-    out += text(200, 352, f"{joined:%b} {joined.day}, {joined.year} - Present", t, size=25, weight=600, anchor="middle")
+    out += text(200, 194, f"{stats['total']:,}", t, size=66, weight=700, fill=t["accent2"], anchor="middle")
+    out += text(200, 279, "Contributions this year", t, size=31, fill=t["accent2"], anchor="middle")
+    out += text(200, 352, date_range(stats["period_start"], stats["period_end"]), t, size=24, weight=600, anchor="middle")
 
     # Leave an opening at the top of the ring for the flame.
     out += (f'<circle cx="600" cy="168" r="96" fill="none" stroke="{t["accent2"]}" stroke-width="11" '
@@ -389,9 +361,9 @@ def streak_card(stats: dict, weekly: dict, t: dict) -> str:
     out += text(600, 387, date_range(weekly["current_start"], weekly["current_end"]), t, size=24, weight=600, anchor="middle")
 
     out += text(1000, 194, str(weekly["longest"]), t, size=66, weight=700, fill=t["accent2"], anchor="middle")
-    out += text(1000, 279, "Longest week streak", t, size=31, fill=t["accent2"], anchor="middle")
+    out += text(1000, 279, "Longest streak this year", t, size=30, fill=t["accent2"], anchor="middle")
     out += text(1000, 352, date_range(weekly["longest_start"], weekly["longest_end"]), t, size=24, weight=600, anchor="middle")
-    label = (f"{stats['all_time']:,} total contributions since joining GitHub. "
+    label = (f"{stats['total']:,} contributions this year. "
              f"{weekly['current']} week current streak, {weekly['longest']} week longest streak. "
              "Weeks run Sunday to Saturday. The current week remains open until Saturday ends.")
     return svg(WIDTH, height, label, out)
@@ -554,7 +526,9 @@ def main() -> None:
     cal = user["contributionsCollection"]["contributionCalendar"]
     days = [(d["date"], d["contributionCount"]) for w in cal["weeks"] for d in w["contributionDays"]]
     today = local_now.date().isoformat()
-    days = [d for d in days if year_start.date().isoformat() <= d[0] <= today]
+    days = sorted(d for d in days if year_start.date().isoformat() <= d[0] <= today)
+    period_start = year_start.date()
+    period_end = date.fromisoformat(days[-1][0])
     current, longest = streaks(days)
 
     sizes: dict[str, list] = {}
@@ -579,7 +553,8 @@ def main() -> None:
         "best": max((c for _, c in days), default=0),
         "active": sum(1 for _, c in days if c),
         "name": user["name"] or LOGIN,
-        "joined": user["createdAt"],
+        "period_start": period_start,
+        "period_end": period_end,
         "stars": sum(r["stargazerCount"] for r in owned),
         "commits": user["contributionsCollection"]["totalCommitContributions"] + private["commits"],
         "reviews": user["contributionsCollection"]["totalPullRequestReviewContributions"],
@@ -588,12 +563,12 @@ def main() -> None:
         "issues": user["issues"]["totalCount"],
         "followers": user["followers"]["totalCount"],
     }
-    history = contribution_history(user["contributionsCollection"]["contributionYears"], now)
-    # The year-to-date calendar is the freshest response for recent dates.
-    history = sorted({**dict(history), **dict(days)}.items())
-    history = [(d, c) for d, c in history if stats["joined"][:10] <= d <= today]
-    stats["all_time"] = sum(c for _, c in history)
-    weekly = weekly_streaks(history, local_now.date())
+    # Every contribution total and weekly streak uses this same calendar response.
+    # Use its last date so the Manila clock cannot move streaks ahead of GitHub.
+    weekly = weekly_streaks(days, period_end)
+    for key in ("current_start", "longest_start"):
+        if weekly[key] is not None:
+            weekly[key] = max(weekly[key], period_start)
 
     # Drop last run's open source cards so a shorter list leaves no orphans.
     for old in ASSETS.glob("oss-*.svg"):
@@ -629,8 +604,8 @@ def main() -> None:
     readme = ROOT / "README.md"
     content = readme.read_text(encoding="utf-8")
     activity_cards = [
-        picture("stats", "GitHub stats: stars earned, commits this year, pull requests, issues, and repositories contributed to this year.", width=585),
-        picture("streak", "Total contributions since joining GitHub, current weekly streak, and longest weekly streak.", width=620),
+        picture("stats", "GitHub stats: contributions this year matching the heat map, stars earned, commits this year, pull requests, issues, and repositories contributed to this year.", width=585),
+        picture("streak", "Contributions this year matching the heat map, current weekly streak, and longest weekly streak this year.", width=620),
         picture("calendar", "Contribution heat map from January 1 through today. Refreshed hourly with the last update time in Manila."),
         picture("activity", "Languages by bytes of code in my repositories."),
     ]
@@ -642,7 +617,7 @@ def main() -> None:
                      content, flags=re.S)
     readme.write_text(content, encoding="utf-8")
     stamp_readme()
-    print(json.dumps(stats))
+    print(json.dumps(stats, default=str))
 
 
 if __name__ == "__main__":

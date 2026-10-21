@@ -43,7 +43,7 @@ class WeeklyStreakTests(unittest.TestCase):
 
 class RefreshTests(unittest.TestCase):
     def test_new_contribution_changes_svg_and_readme_image_urls(self):
-        now = datetime.now(timezone.utc)
+        now = datetime(2026, 1, 4, 12, tzinfo=timezone.utc)
         day = now.date().isoformat()
         count = 3
 
@@ -80,7 +80,9 @@ class RefreshTests(unittest.TestCase):
                   patch.object(cards, "owned_repos", return_value=[]),
                   patch.object(cards, "merged_prs", return_value=[]),
                   patch.object(cards, "private_stats", return_value={"commits": 12, "contributed": 2}),
+                  patch.object(cards, "datetime", wraps=datetime) as clock,
                   contextlib.redirect_stdout(io.StringIO())):
+                clock.now.return_value = now
                 cards.main()
                 old_svg = (assets / "calendar-dark.svg").read_text()
                 old_readme = readme.read_text()
@@ -98,7 +100,13 @@ class RefreshTests(unittest.TestCase):
                 self.assertIn("Total commits (this year)", (assets / "stats-dark.svg").read_text())
                 self.assertIn("Total commits (this year): 16", (assets / "stats-dark.svg").read_text())
                 self.assertIn("Updated ", new_svg)
-                self.assertIn("4 total contributions", (assets / "streak-dark.svg").read_text())
+                stats_svg = (assets / "stats-dark.svg").read_text()
+                streak_svg = (assets / "streak-dark.svg").read_text()
+                self.assertIn("Contributions (this year): 4", stats_svg)
+                self.assertIn("4 contributions this year", streak_svg)
+                self.assertIn("1 week current streak", streak_svg)
+                self.assertIn("Jan 1, 2026", streak_svg)
+                self.assertNotIn("since joining GitHub", streak_svg)
                 for path in assets.glob("*.svg"):
                     ET.parse(path)
 
