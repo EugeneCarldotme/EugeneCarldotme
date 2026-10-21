@@ -1,12 +1,12 @@
 name: Cards
 
-# Redraws the SVG cards in assets/ every day and commits them. The cards render
+# Redraws the SVG cards in assets/ every hour and commits them. The cards render
 # here instead of on a hosted badge service, so another service's rate limit or
 # outage can't break the profile.
 
 on:
   schedule:
-    - cron: "0 20 * * *" # 4am Manila
+    - cron: "17 * * * *" # Hourly, away from the busy start of the hour (UTC).
   workflow_dispatch:
   push:
     branches: [main]
@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
+      TZ: Asia/Manila
       # A fine-grained personal token with read-only Metadata on all my repos
       # lets the languages bar count private repos too. The card only shows
       # byte totals per language, never repo names or code. Without the token
@@ -42,6 +43,9 @@ jobs:
       - name: Render static cards
         working-directory: scripts
         run: python3 build_static.py
+
+      - name: Check contribution calculations and image cache invalidation
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
 
       - name: Render data cards
         working-directory: scripts
