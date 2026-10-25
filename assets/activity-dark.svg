@@ -1,26 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 136" width="1200" height="136" role="img" aria-label="Languages by bytes of code: TypeScript, Go, JavaScript, Swift, MDX, HTML.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 136" width="1200" height="136" role="img" aria-label="Languages by bytes of code: TypeScript, HTML, Go, JavaScript, Swift, MDX.">
   <rect x="0.5" y="0.5" width="1199" height="135" rx="14" fill="#0D1117" stroke="#8B949E"/>
   <text x="22" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#C9D1D9">Languages, by bytes of code in my repos</text>
   <clipPath id="bar"><rect x="22" y="56" width="1156" height="12" rx="6"/></clipPath>
   <g clip-path="url(#bar)">
   <rect x="22" y="56" width="1156" height="12" fill="#8B949E"/>
-  <rect x="22" y="56" width="969.324" height="12" fill="#3178c6"/>
-  <rect x="991.324" y="56" width="66.8269" height="12" fill="#00ADD8"/>
-  <rect x="1058.15" y="56" width="29.3774" height="12" fill="#f1e05a"/>
-  <rect x="1087.53" y="56" width="29.2438" height="12" fill="#F05138"/>
-  <rect x="1116.77" y="56" width="14.8066" height="12" fill="#fcb32c"/>
-  <rect x="1131.58" y="56" width="9.78419" height="12" fill="#e34c26"/>
+  <rect x="22" y="56" width="906.799" height="12" fill="#3178c6"/>
+  <rect x="928.799" y="56" width="81.2776" height="12" fill="#e34c26"/>
+  <rect x="1010.08" y="56" width="62.5164" height="12" fill="#00ADD8"/>
+  <rect x="1072.59" y="56" width="28.1417" height="12" fill="#f1e05a"/>
+  <rect x="1100.74" y="56" width="27.3575" height="12" fill="#F05138"/>
+  <rect x="1128.09" y="56" width="13.8516" height="12" fill="#fcb32c"/>
   </g>
   <circle cx="28" cy="107" r="6" fill="#3178c6"/>
-  <text x="42" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">TypeScript 84%</text>
-  <circle cx="204.88" cy="107" r="6" fill="#00ADD8"/>
-  <text x="218.88" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">Go 6%</text>
-  <circle cx="301.84000000000003" cy="107" r="6" fill="#f1e05a"/>
-  <text x="315.84" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">JavaScript 3%</text>
-  <circle cx="467.20000000000005" cy="107" r="6" fill="#F05138"/>
-  <text x="481.2" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">Swift 3%</text>
-  <circle cx="587.9200000000001" cy="107" r="6" fill="#fcb32c"/>
-  <text x="601.92" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">MDX 1%</text>
-  <circle cx="702.1600000000001" cy="107" r="6" fill="#e34c26"/>
-  <text x="716.16" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">HTML 1%</text>
+  <text x="42" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">TypeScript 78%</text>
+  <circle cx="204.88" cy="107" r="6" fill="#e34c26"/>
+  <text x="218.88" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">HTML 7%</text>
+  <circle cx="330.64" cy="107" r="6" fill="#00ADD8"/>
+  <text x="344.64" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">Go 5%</text>
+  <circle cx="427.6" cy="107" r="6" fill="#f1e05a"/>
+  <text x="441.6" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">JavaScript 2%</text>
+  <circle cx="592.96" cy="107" r="6" fill="#F05138"/>
+  <text x="606.96" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">Swift 2%</text>
+  <circle cx="713.6800000000001" cy="107" r="6" fill="#fcb32c"/>
+  <text x="727.68" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">MDX 1%</text>
 </svg>
