@@ -4,13 +4,13 @@
 <path d="M800 66V405" stroke="#8C959F" stroke-width="2"/>
   <text x="200" y="194" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="66" font-weight="700" fill="#007F99">2,307</text>
   <text x="200" y="279" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="31" fill="#007F99">Contributions this year</text>
-  <text x="200" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2328">Jan 1, 2026 - Oct 27, 2026</text>
+  <text x="200" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2328">Jan 1, 2026 - Oct 28, 2026</text>
 <circle cx="600" cy="168" r="96" fill="none" stroke="#007F99" stroke-width="11" pathLength="100" stroke-dasharray="90 10" transform="rotate(-72 600 168)"/>
 <path d="M600 45c13 17 22 29 11 42-10 10-28 4-28-9 0-8 6-15 11-21 1 8 5 11 8 8 4-4 0-13-2-20z" fill="#007F99"/>
   <text x="600" y="192" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="66" font-weight="700" fill="#007F99">10</text>
   <text x="600" y="325" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#007F99">Week streak</text>
-  <text x="600" y="387" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2328">Aug 23, 2026 - Oct 27, 2026</text>
+  <text x="600" y="387" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2328">Aug 23, 2026 - Oct 28, 2026</text>
   <text x="1000" y="194" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="66" font-weight="700" fill="#007F99">10</text>
   <text x="1000" y="279" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="30" fill="#007F99">Longest streak this year</text>
-  <text x="1000" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2328">Aug 23, 2026 - Oct 27, 2026</text>
+  <text x="1000" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2328">Aug 23, 2026 - Oct 28, 2026</text>
 </svg>
