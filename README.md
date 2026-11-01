@@ -26,9 +26,9 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-dark.svg?v=b38267443c">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-light.svg?v=a31479ee73">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-dark.svg?v=b38267443c" width="100%" alt="Contribution heat map from January 1 through today. Refreshed hourly with the last update time in Manila.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-dark.svg?v=e6163f9269">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-light.svg?v=dd3caea4fa">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-dark.svg?v=e6163f9269" width="100%" alt="Contribution heat map from January 1 through today. Refreshed hourly with the last update time in Manila.">
 </picture>
 
 <picture>
@@ -82,9 +82,9 @@
 </picture>
 <a href="https://github.com/vorssaint/vorssaint-utils">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=6cfa048448">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-light.svg?v=0f3e800c63">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=6cfa048448" width="100%" alt="vorssaint/vorssaint-utils">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=3096e36ffc">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-light.svg?v=208cdfccab">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=3096e36ffc" width="100%" alt="vorssaint/vorssaint-utils">
 </picture>
 </a>
 <picture>
