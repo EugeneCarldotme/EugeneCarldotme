@@ -4,17 +4,17 @@
   <clipPath id="bar"><rect x="22" y="56" width="1156" height="12" rx="6"/></clipPath>
   <g clip-path="url(#bar)">
   <rect x="22" y="56" width="1156" height="12" fill="#8C959F"/>
-  <rect x="22" y="56" width="918.879" height="12" fill="#3178c6"/>
-  <rect x="940.879" y="56" width="79.4059" height="12" fill="#e34c26"/>
-  <rect x="1020.29" y="56" width="71.8781" height="12" fill="#00ADD8"/>
-  <rect x="1092.16" y="56" width="26.5977" height="12" fill="#F05138"/>
-  <rect x="1118.76" y="56" width="13.4376" height="12" fill="#fcb32c"/>
-  <rect x="1132.2" y="56" width="11.3399" height="12" fill="#f1e05a"/>
+  <rect x="22" y="56" width="928.996" height="12" fill="#3178c6"/>
+  <rect x="950.996" y="56" width="74.8197" height="12" fill="#e34c26"/>
+  <rect x="1025.82" y="56" width="67.7055" height="12" fill="#00ADD8"/>
+  <rect x="1093.52" y="56" width="25.1663" height="12" fill="#F05138"/>
+  <rect x="1118.69" y="56" width="14.8857" height="12" fill="#fcb32c"/>
+  <rect x="1133.57" y="56" width="10.7883" height="12" fill="#f1e05a"/>
   </g>
   <circle cx="28" cy="107" r="6" fill="#3178c6"/>
-  <text x="42" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#1F2328">TypeScript 79%</text>
+  <text x="42" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#1F2328">TypeScript 80%</text>
   <circle cx="204.88" cy="107" r="6" fill="#e34c26"/>
-  <text x="218.88" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#1F2328">HTML 7%</text>
+  <text x="218.88" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#1F2328">HTML 6%</text>
   <circle cx="330.64" cy="107" r="6" fill="#00ADD8"/>
   <text x="344.64" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#1F2328">Go 6%</text>
   <circle cx="427.6" cy="107" r="6" fill="#F05138"/>
