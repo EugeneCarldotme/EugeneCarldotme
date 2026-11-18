@@ -4,12 +4,12 @@
   <clipPath id="bar"><rect x="22" y="56" width="1156" height="12" rx="6"/></clipPath>
   <g clip-path="url(#bar)">
   <rect x="22" y="56" width="1156" height="12" fill="#8B949E"/>
-  <rect x="22" y="56" width="922.385" height="12" fill="#3178c6"/>
-  <rect x="944.385" y="56" width="79.4874" height="12" fill="#00ADD8"/>
-  <rect x="1023.87" y="56" width="71.9535" height="12" fill="#e34c26"/>
-  <rect x="1095.83" y="56" width="24.3813" height="12" fill="#F05138"/>
-  <rect x="1120.21" y="56" width="14.3149" height="12" fill="#fcb32c"/>
-  <rect x="1134.52" y="56" width="10.4345" height="12" fill="#f1e05a"/>
+  <rect x="22" y="56" width="923.088" height="12" fill="#3178c6"/>
+  <rect x="945.088" y="56" width="79.247" height="12" fill="#00ADD8"/>
+  <rect x="1024.34" y="56" width="71.736" height="12" fill="#e34c26"/>
+  <rect x="1096.07" y="56" width="24.3107" height="12" fill="#F05138"/>
+  <rect x="1120.38" y="56" width="14.2716" height="12" fill="#fcb32c"/>
+  <rect x="1134.65" y="56" width="10.4031" height="12" fill="#f1e05a"/>
   </g>
   <circle cx="28" cy="107" r="6" fill="#3178c6"/>
   <text x="42" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#F0F6FC">TypeScript 80%</text>
