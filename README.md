@@ -20,15 +20,15 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/streak-dark.svg?v=b984ec4830">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/streak-light.svg?v=af498066cc">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/streak-dark.svg?v=b984ec4830" width="620" alt="Contributions this year matching the heat map, current weekly streak, and longest weekly streak this year.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/streak-dark.svg?v=01843ad7cc">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/streak-light.svg?v=81c6f0a6f3">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/streak-dark.svg?v=01843ad7cc" width="620" alt="Contributions this year matching the heat map, current weekly streak, and longest weekly streak this year.">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-dark.svg?v=5bd1159071">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-light.svg?v=3974d2f919">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-dark.svg?v=5bd1159071" width="100%" alt="Contribution heat map from January 1 through today. Refreshed hourly with the last update time in Manila.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-dark.svg?v=69709ac2fa">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-light.svg?v=7d2a174ccb">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/calendar-dark.svg?v=69709ac2fa" width="100%" alt="Contribution heat map from January 1 through today. Refreshed hourly with the last update time in Manila.">
 </picture>
 
 <picture>
@@ -82,9 +82,9 @@
 </picture>
 <a href="https://github.com/vorssaint/vorssaint-utils">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=c312312577">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-light.svg?v=85b98711da">
-  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=c312312577" width="100%" alt="vorssaint/vorssaint-utils">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=2f2923233c">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-light.svg?v=39d4131036">
+  <img src="https://raw.githubusercontent.com/EugeneCarldotme/EugeneCarldotme/main/assets/oss-repo-00-dark.svg?v=2f2923233c" width="100%" alt="vorssaint/vorssaint-utils">
 </picture>
 </a>
 <picture>
